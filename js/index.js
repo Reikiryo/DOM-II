@@ -107,6 +107,7 @@ const home = document.querySelector('.home')
 const container = document.querySelector('.container')
 const body = document.querySelector('body')
 const headerImg = document.querySelector('.header-img')
+const destinationImg = document.querySelector('.destination-img')
 //all
 const imgSections = document.querySelectorAll('.img-content')
 const img = document.querySelectorAll('img')
@@ -236,6 +237,9 @@ window.addEventListener('scroll', (e) => {
         rotate: 200,
         y: 50
     })
+    gsap.to(destinationImg, {
+        rotate: 200,
+    })
 })
 
 //event 5 resize event
@@ -317,8 +321,7 @@ btn.forEach(el => {
 document.addEventListener('keypress', (e) => {
     gsap.to(headerImg, {
         duration: 2,
-        height: '20%',
-        width: '20%'
+        scale: 0.3
     })
 })
 
