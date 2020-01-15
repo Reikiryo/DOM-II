@@ -1,5 +1,6 @@
 // Your code goes here
 
+//img component
 const imgCreator = (margL, w, h, img) => {
     //div
     const newDiv = document.createElement('div')
@@ -17,6 +18,17 @@ const imgCreator = (margL, w, h, img) => {
     newDiv.appendChild(newImg)
     return newDiv
 }
+
+const warning = imgCreator('27%', '50%', '25%', 'img/warning.png')
+
+const static = imgCreator('none', '100%', '100%', 'img/static.png')
+
+const error = imgCreator('none', '20%', '28%', 'img/error.png' )
+error.style.margin = '3%'
+
+const error2 = imgCreator('none', '100%', '100%', 'img/error2.png')
+
+
 //warning div
 // const warning = document.createElement('div')
 // warning.style.position = 'fixed'
@@ -31,14 +43,6 @@ const imgCreator = (margL, w, h, img) => {
 // warningImg.style.height = '100%'
 // //apend warning img to warning
 // warning.appendChild(warningImg)
-
-const warning = imgCreator('27%', '50%', '25%', 'img/warning.png')
-
-const static = imgCreator('none', '100%', '100%', 'img/static.png')
-
-const error = imgCreator('none', '20%', '28%', 'img/error.png' )
-error.style.margin = '3%'
-
 
 // //static div
 // const static = document.createElement('div')
@@ -69,19 +73,19 @@ error.style.margin = '3%'
 // //apend error img to error
 // error.appendChild(errorImg)
 
-//error2 div
-const error2 = document.createElement('div')
-error2.style.position = 'fixed'
-error2.style.zIndex = '2'
-error2.style.width = '100%'
-error2.style.height = '100%'
-//error img
-const error2Img = document.createElement('img')
-error2Img.src = 'img/error2.png'
-error2Img.style.width = '100%'
-error2Img.style.height = '100%'
-//apend error img to error
-error2.appendChild(error2Img)
+// //error2 div
+// const error2 = document.createElement('div')
+// error2.style.position = 'fixed'
+// error2.style.zIndex = '2'
+// error2.style.width = '100%'
+// error2.style.height = '100%'
+// //error img
+// const error2Img = document.createElement('img')
+// error2Img.src = 'img/error2.png'
+// error2Img.style.width = '100%'
+// error2Img.style.height = '100%'
+// //apend error img to error
+// error2.appendChild(error2Img)
 
 //error content
 const errorP = document.createElement('p')
@@ -92,7 +96,6 @@ errorP.style.height = '20%'
 errorP.style.top = '0'
 errorP.style.fontSize = '4rem'
 errorP.style.marginLeft = '29%'
-
 
 //modal
 const modal = document.createElement('div')
@@ -159,6 +162,41 @@ const random = () => {
     return Math.floor(Math.random() * Math.floor(colors.length));
  }
 
+const randomEverything = () => {
+    p.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    h2.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    h4.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    destination.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    btn.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    a.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    home.style.background = colors[random()]
+    container.style.background = colors[random()]
+    body.style.background = colors[random()]
+    header.style.background = colors[random()]
+    logo.style.background = colors[random()]
+    footer.style.background = colors[random()]
+    body.style.background = colors[random()]
+    destinationContent.style.background = colors[random()]
+}
+
 //event 1 load event
 window.addEventListener('load', (e) => {
     header.appendChild(modal)
@@ -200,39 +238,7 @@ modalButton.addEventListener('click', () => {
     header.appendChild(error2)
     header.appendChild(errorP)
 
-
-        p.forEach(el => {
-            el.style.color = colors[random()]
-            el.style.background = colors[random()]
-        })
-        h2.forEach(el => {
-            el.style.color = colors[random()]
-            el.style.background = colors[random()]
-        })
-        h4.forEach(el => {
-            el.style.color = colors[random()]
-            el.style.background = colors[random()]
-        })
-        destination.forEach(el => {
-            el.style.color = colors[random()]
-            el.style.background = colors[random()]
-        })
-        btn.forEach(el => {
-            el.style.color = colors[random()]
-            el.style.background = colors[random()]
-        })
-        a.forEach(el => {
-            el.style.color = colors[random()]
-            el.style.background = colors[random()]
-        })
-        home.style.background = colors[random()]
-        container.style.background = colors[random()]
-        body.style.background = colors[random()]
-        header.style.background = colors[random()]
-        logo.style.background = colors[random()]
-        footer.style.background = colors[random()]
-        body.style.background = colors[random()]
-        destinationContent.style.background = colors[random()]
+        randomEverything()
 
         gsap.to(warning, {
             duration: 5,
@@ -269,38 +275,7 @@ window.addEventListener('scroll', (e) => {
 
 //event 5 resize event
 window.addEventListener('resize', (e) => {
-    p.forEach(el => {
-        el.style.color = colors[random()]
-        el.style.background = colors[random()]
-    })
-    h2.forEach(el => {
-        el.style.color = colors[random()]
-        el.style.background = colors[random()]
-    })
-    h4.forEach(el => {
-        el.style.color = colors[random()]
-        el.style.background = colors[random()]
-    })
-    destination.forEach(el => {
-        el.style.color = colors[random()]
-        el.style.background = colors[random()]
-    })
-    btn.forEach(el => {
-        el.style.color = colors[random()]
-        el.style.background = colors[random()]
-    })
-    a.forEach(el => {
-        el.style.color = colors[random()]
-        el.style.background = colors[random()]
-    })
-    home.style.background = colors[random()]
-    container.style.background = colors[random()]
-    body.style.background = colors[random()]
-    header.style.background = colors[random()]
-    logo.style.background = colors[random()]
-    footer.style.background = colors[random()]
-    body.style.background = colors[random()]
-    destinationContent.style.background = colors[random()]
+    randomEverything()
 })
 
 //event 6 double click event
