@@ -106,6 +106,7 @@ const destinationContent = document.querySelector('.content-destination')
 const home = document.querySelector('.home')
 const container = document.querySelector('.container')
 const body = document.querySelector('body')
+const headerImg = document.querySelector('.header-img')
 //all
 const imgSections = document.querySelectorAll('.img-content')
 const img = document.querySelectorAll('img')
@@ -115,16 +116,14 @@ const p = document.querySelectorAll('p')
 const destination = document.querySelectorAll('.destination')
 const btn = document.querySelectorAll('.btn')
 const a = document.querySelectorAll('a')
-//other
 
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  }
+//prevent default
+a.forEach(el => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault()
+    })
+})
+
 
 //array of colors
 const colors = ['cadetblue', 'azure', 'aqua', 'blueviolet', 'firebrick', 'lightgray', 'lime', 'maroon', 'snow', 'yellowgreen', 'orchid', 'brown', 'darkslateblue', 'darkseagreen', 'deepskyblue', 'lightseagreen', 'lavenderblush', 'limegreen', 'lightpink', 'magenta', 'mediumspringgreen', 'navajowhite', 'navy', 'red', 'blue', 'green', 'white', 'black', 'purple', 'yellow']
@@ -175,7 +174,6 @@ modalButton.addEventListener('click', () => {
     header.appendChild(error2)
     header.appendChild(errorP)
 
-    let i = 0
 
         p.forEach(el => {
             el.style.color = colors[random()]
@@ -231,6 +229,96 @@ modalButton.addEventListener('click', () => {
         })
 })
 
+//event 4 scroll event
+window.addEventListener('scroll', (e) => {
+    gsap.to(logo, {
+        marginTop: '20%',
+        rotate: 200,
+        y: 50
+    })
+})
 
-console.log(window.scrollY)
+//event 5 resize event
+window.addEventListener('resize', (e) => {
+    p.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    h2.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    h4.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    destination.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    btn.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    a.forEach(el => {
+        el.style.color = colors[random()]
+        el.style.background = colors[random()]
+    })
+    home.style.background = colors[random()]
+    container.style.background = colors[random()]
+    body.style.background = colors[random()]
+    header.style.background = colors[random()]
+    logo.style.background = colors[random()]
+    footer.style.background = colors[random()]
+    body.style.background = colors[random()]
+    destinationContent.style.background = colors[random()]
+})
+
+//event 6 double click event
+error.addEventListener('dblclick', (e) => {
+    errorP.style.fontSize = '10rem'
+    errorP.style.marginLeft = '20%'
+})
+
+
+//event 7 mouse leave event
+img.forEach(el => {
+    if (el !== headerImg) {
+        el.addEventListener('mouseleave', (e) => {
+            gsap.to(e.target, {
+                scale: 1.2
+            })
+        })
+    }
+})
+
+//event 8 focus event
+a.forEach(el => {
+    el.addEventListener('focus', (e) => {
+        gsap.to(e.target, {
+            color: colors[random()],
+            background: colors[random()],
+            fontSize: '2rem'
+        })
+    })
+})
+
+//event 9 select event
+btn.forEach(el => {
+    el.addEventListener('auxclick', (e) => {
+        gsap.to(e.target, {
+            color: colors[random()],
+            background: colors[random()]
+        })
+    })
+})
+
+//event 10 key press event 
+document.addEventListener('keypress', (e) => {
+    gsap.to(headerImg, {
+        duration: 2,
+        height: '20%',
+        width: '20%'
+    })
+})
 
