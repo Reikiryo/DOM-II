@@ -1,48 +1,73 @@
 // Your code goes here
 
+const imgCreator = (margL, w, h, img) => {
+    //div
+    const newDiv = document.createElement('div')
+    newDiv.style.position = 'fixed'
+    newDiv.style.zIndex = '1'
+    newDiv.style.marginLeft = margL
+    newDiv.style.width = w
+    newDiv.style.height = h
+    //img
+    const newImg = document.createElement('img')
+    newImg.src = img
+    newImg.style.width = '100%'
+    newImg.style.height = '100%'
+    //apend img to div
+    newDiv.appendChild(newImg)
+    return newDiv
+}
 //warning div
-const warning = document.createElement('div')
-warning.style.position = 'fixed'
-warning.style.zIndex = '1'
-warning.style.marginLeft = '27%'
-warning.style.width = '50%'
-warning.style.height = '25%'
-//warning img
-const warningImg = document.createElement('img')
-warningImg.src = 'img/warning.png'
-warningImg.style.width = '100%'
-warningImg.style.height = '100%'
-//apend warning img to warning
-warning.appendChild(warningImg)
+// const warning = document.createElement('div')
+// warning.style.position = 'fixed'
+// warning.style.zIndex = '1'
+// warning.style.marginLeft = '27%'
+// warning.style.width = '50%'
+// warning.style.height = '25%'
+// //warning img
+// const warningImg = document.createElement('img')
+// warningImg.src = 'img/warning.png'
+// warningImg.style.width = '100%'
+// warningImg.style.height = '100%'
+// //apend warning img to warning
+// warning.appendChild(warningImg)
 
-//static div
-const static = document.createElement('div')
-static.style.position = 'fixed'
-static.style.zIndex = '1'
-static.style.width = '100%'
-static.style.height = '100%'
-//static img
-const staticImg = document.createElement('img')
-staticImg.src = 'img/static.png'
-staticImg.style.width = '100%'
-staticImg.style.height = '100%'
-//apend static img to static
-static.appendChild(staticImg)
+const warning = imgCreator('27%', '50%', '25%', 'img/warning.png')
 
-//error div
-const error = document.createElement('div')
-error.style.position = 'fixed'
-error.style.zIndex = '1'
-error.style.width = '20%'
-error.style.height = '28%'
+const static = imgCreator('none', '100%', '100%', 'img/static.png')
+
+const error = imgCreator('none', '20%', '28%', 'img/error.png' )
 error.style.margin = '3%'
-//error img
-const errorImg = document.createElement('img')
-errorImg.src = 'img/error.png'
-errorImg.style.width = '100%'
-errorImg.style.height = '100%'
-//apend error img to error
-error.appendChild(errorImg)
+
+
+// //static div
+// const static = document.createElement('div')
+// static.style.position = 'fixed'
+// static.style.zIndex = '1'
+// static.style.width = '100%'
+// static.style.height = '100%'
+// //static img
+// const staticImg = document.createElement('img')
+// staticImg.src = 'img/static.png'
+// staticImg.style.width = '100%'
+// staticImg.style.height = '100%'
+// //apend static img to static
+// static.appendChild(staticImg)
+
+// //error div
+// const error = document.createElement('div')
+// error.style.position = 'fixed'
+// error.style.zIndex = '1'
+// error.style.width = '20%'
+// error.style.height = '28%'
+// error.style.margin = '3%'
+// //error img
+// const errorImg = document.createElement('img')
+// errorImg.src = 'img/error.png'
+// errorImg.style.width = '100%'
+// errorImg.style.height = '100%'
+// //apend error img to error
+// error.appendChild(errorImg)
 
 //error2 div
 const error2 = document.createElement('div')
