@@ -29,64 +29,6 @@ error.style.margin = '3%'
 const error2 = imgCreator('none', '100%', '100%', 'img/error2.png')
 
 
-//warning div
-// const warning = document.createElement('div')
-// warning.style.position = 'fixed'
-// warning.style.zIndex = '1'
-// warning.style.marginLeft = '27%'
-// warning.style.width = '50%'
-// warning.style.height = '25%'
-// //warning img
-// const warningImg = document.createElement('img')
-// warningImg.src = 'img/warning.png'
-// warningImg.style.width = '100%'
-// warningImg.style.height = '100%'
-// //apend warning img to warning
-// warning.appendChild(warningImg)
-
-// //static div
-// const static = document.createElement('div')
-// static.style.position = 'fixed'
-// static.style.zIndex = '1'
-// static.style.width = '100%'
-// static.style.height = '100%'
-// //static img
-// const staticImg = document.createElement('img')
-// staticImg.src = 'img/static.png'
-// staticImg.style.width = '100%'
-// staticImg.style.height = '100%'
-// //apend static img to static
-// static.appendChild(staticImg)
-
-// //error div
-// const error = document.createElement('div')
-// error.style.position = 'fixed'
-// error.style.zIndex = '1'
-// error.style.width = '20%'
-// error.style.height = '28%'
-// error.style.margin = '3%'
-// //error img
-// const errorImg = document.createElement('img')
-// errorImg.src = 'img/error.png'
-// errorImg.style.width = '100%'
-// errorImg.style.height = '100%'
-// //apend error img to error
-// error.appendChild(errorImg)
-
-// //error2 div
-// const error2 = document.createElement('div')
-// error2.style.position = 'fixed'
-// error2.style.zIndex = '2'
-// error2.style.width = '100%'
-// error2.style.height = '100%'
-// //error img
-// const error2Img = document.createElement('img')
-// error2Img.src = 'img/error2.png'
-// error2Img.style.width = '100%'
-// error2Img.style.height = '100%'
-// //apend error img to error
-// error2.appendChild(error2Img)
-
 //error content
 const errorP = document.createElement('p')
 errorP.textContent = "THIS SITE HAS BEEN CORRUPTED!"
@@ -259,6 +201,13 @@ modalButton.addEventListener('click', () => {
             opacity: '90%',
             display: 'none'
         })
+})
+
+//extra click event
+p.forEach(el => {
+    el.addEventListener('click', (e) => {
+        e.target.style.color = colors[random()]
+    })
 })
 
 //event 4 scroll event
