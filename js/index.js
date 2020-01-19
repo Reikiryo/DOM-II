@@ -49,20 +49,24 @@ modal.style.marginLeft = '40%'
 modal.style.marginTop = '12%'
 modal.style.background = 'black'
 modal.style.padding = '2%'
+modal.style.border = '7px solid black'
 
 //modal content
 const modalP = document.createElement('p')
-modalP.textContent = "PLEASE DO NOT CLICK! I'M BEGGING YOU!!!"
+modalP.textContent = "PLEASE DO NOT CLICK!"
 modalP.style.color = 'white'
 modalP.style.fontSize = '3rem'
+modalP.style.marginLeft = '10%'
 const modalButton = document.createElement('button')
-modalButton.textContent = 'CLICK ME!!'
+//modalButton.textContent = 'Button'
+modalButton.style.fontSize = '3rem'
 modalButton.style.background = 'red'
-modalButton.style.marginLeft = '35%'
+modalButton.style.margin = '32%'
 modalButton.style.marginTop = '2%'
-modalButton.style.width = '30%'
-modalButton.style.height = '20%'
-modalButton.style.border = 'none'
+modalButton.style.width = '35%'
+modalButton.style.height = '60%'
+modalButton.style.border = '2% solid white'
+modalButton.style.borderRadius = '120px'
 //appending content to modal
 modal.prepend(modalP)
 modal.appendChild(modalButton)
@@ -148,25 +152,27 @@ window.addEventListener('load', (e) => {
 modal.addEventListener('mouseenter', (e) => {
     header.appendChild(warning)
 
-    modalP.style.fontSize = '2.5rem'
-
     gsap.to(modal, {
-        border: '5px dotted red'
+        duration: 2,
+        repeat: 20,
+        border: '7px solid red'
     })
 
+    
     gsap.to(modalButton, {
-        duration: 7,
+        duration: 2,
+        repeat: 20,
+        textContent: 'Press Me!!',
+        color: 'white',
         fontSize: '3rem',
-        width: '70%',
-        height: '50%',
-        marginLeft: '15%'
     })
 
     gsap.to(warning, {
-        duration: 1.5,
-        opacity: '90%',
+        duration: 2,
         repeat: 20,
+        opacity: '90%',
         scale: 1.1,
+        marginBottom: '10%',
         y: 9,
         yoyo: true 
     })
