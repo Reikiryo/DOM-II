@@ -19,9 +19,9 @@ const imgCreator = (margL, w, h, img) => {
     return newDiv
 }
 
-const warning = imgCreator('27%', '50%', '25%', 'img/warning.png')
+const warning = imgCreator('27%', '50%', '25%', 'img/warning2.png')
 
-const static = imgCreator('none', '100%', '100%', 'img/static.png')
+const static = imgCreator('none', '100%', '100%', 'img/static2.png')
 
 const error = imgCreator('none', '20%', '28%', 'img/error.png' )
 error.style.margin = '3%'
@@ -256,7 +256,7 @@ a.forEach(el => {
     })
 })
 
-//event 9 select event
+//event 9 auxclick event
 btn.forEach(el => {
     el.addEventListener('auxclick', (e) => {
         gsap.to(e.target, {
